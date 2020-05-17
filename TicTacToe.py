@@ -161,11 +161,20 @@ def make_move(turns1, turns2, player):
 
         # Assign string of alphabet with lower case
         alphabet = string.ascii_lowercase
+        # Asssing a string of special characters
+        special_char = '/*-+\'¨´§<,.-'
 
-        # Checks that input is 1-9
+        # Checks that input is not empty, a letter in the alphabet
         for c in alphabet:
             #If x is character in aplphabet or empty string or if lenght of string is greater than 1
             if x.lower() == c or x.lower() == '' or len(x) > 1:
+                x = 0
+                break
+
+         # Checks that input is not empty, a special character
+        for sc in special_char:
+            #If x is a special character, or empty string, or if lenght of string is greater than 1
+            if x.lower() == sc or x.lower() == '' or len(x) > 1:
                 x = 0
                 break
 
